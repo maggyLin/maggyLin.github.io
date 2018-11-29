@@ -7,33 +7,22 @@
     <title>myWeb</title>
 
     <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
-    <link rel="stylesheet" href="css/menuSidebar.css">
     <link rel="stylesheet" href="css/bootstrapNavBar_Blue.css">
-
+    <link rel="stylesheet" href="css/fontAwesome_v5.css" >
 </head>
 
-<body style="padding-top: 50px;">
-    <!-- Nav Bar  -->
-    <nav class="navbar navbar-default navbar-static-top navbar-fixed-top sidebarNavigation" data-sidebarClass="navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle left-navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                        <li class="active"><a href="./">Home</a></li>
-                        <li><a href="">artical</a></li>
-                        <li><a href="#work">works</a></li>
-                </ul>
-            </div>
+<body id="home" style="padding-top: 50px;">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav nav-pills">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#work">作品</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="jumbotron" style="padding:0px 30px;">
+    <div class="jumbotron" style="padding:0px 30px; background-color:lightblue;">
         <div class="container" >
             <div class="row">
                 <div class="col-xs-12">
@@ -47,8 +36,13 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-4" style="padding:20px;">
-                <img src="img/head.jpg" class="img-circle center-block"> 
-            </div>                 
+                <img src="img/head.jpg" class="img-circle center-block">
+                <div class="text-right">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github " style="font-size:30px;"></i></a>
+                </div>
+            </div>    
+            
+            
             
             <div class="col-xs-12 col-sm-8">
                 <p>aaaa vvv ddd sss eee</p>   
@@ -60,19 +54,81 @@
         </div>
     </div>
 
-    <div>
-        <div class="container" id="work" style="padding-top: 50px;">
-            <div class="row">
+    <div id="work" class="jumbotron" style="padding: 50px 0px 0px 0px; margin: 0px;">
+
+      
+            <div class="row" style="margin:0px 20px 0px 20px;">
                 <div class="col-xs-12">
-                    <div class="alert alert-info" role="alert">welcome to my web! something do</div>
+                    <div class="alert" style="background-color:lightblue; padding: 8px;" >
+                        <p class="text-center">作品</p>
+                    </div>  
+                </div>
+            </div>
+     
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="thumbnail" >
+                        <img style="height:200px;" src="img/honey.JPG">
+                        <div class="caption">
+                            <h3>123</h3>
+                            <p>aaaa vvv ddd sss eee</p>
+                            <p><a href="http://www.ht456.com" target="_blank" class="btn btn-primary" role="button">Go</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="thumbnail">
+                        <img style="height:200px;" src="img/honey.JPG">
+                        <div class="caption">
+                            <h3>123</h3>
+                            <p>aaaa vvv ddd sss eee</p>
+                            <p><a href="http://www.ht456.com" target="_blank" class="btn btn-primary" role="button">Go</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div id="work" class="jumbotron" style="padding:0px; margin: 0px;">
+
+        <div style="height:400px;"></div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="text-center">&copy; 2018 MaggyLin</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
     <script src='js/jquery-1.12.4.min.js'></script>
-    <script src="js/menuSidebar.js"></script>
+
+    <script>
+        $("ul li a").on("click", function(){
+        	var a_elm = $(this);
+        	var target_id = a_elm.attr("href");
+        	var topTo = 0;
+        	if(target_id != "#"){
+        		topTo = $(target_id).position().top;
+        	}
+        	$("html, body").animate({
+        		scrollTop: topTo
+        	}, 1000, function(){ 
+            $("ul li[class='active']").removeClass('active');
+        		a_elm.parent().addClass('active');
+        	});
+        	return false;
+        });
+    
+    </script>
 
 </body>
 </html>
