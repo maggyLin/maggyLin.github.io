@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'cwTeXYen', sans-serif;
+  color: #fff;
+  font-size: 14pt;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.fix_bg {
+  position: relative;
+  min-height: 100%;
+}
+
+.fix_bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+
+.bg_1 {
+  background-image: url(../images/bg2.jpg);
+}
+
+.bg_2{
+  background-image: url(../images/kids_bg2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.info {
+  padding: 50px 0px;
+  background-color: #2db6b3;
+  color:black;
+}
+
+.vcenter {
+  position: absolute; /*位置為：相對位置*/
+  left: 50%;	/*離左邊為父類別的50寬*/
+  top: 50%;	/*離上面邊為父類別的50高*/
+  bottom: auto;	/*離下面為父類別的50高*/
+  right: auto;	/*離右邊為父類別的50寬*/
+  /*以下 transform，主要是讓此元素往左移動自己本身寬度的50%，也往上左移動自己本身高度的50%，而前方所加的-xxx-前綴詞，是for不同瀏覽器的*/
+  -webkit-transform: translateX(-50%) translateY(-50%); /* Chrome, newer versions of Opera*/
+  -moz-transform: translateX(-50%) translateY(-50%); /* Firefox */
+  -ms-transform: translateX(-50%) translateY(-50%); /* nternet Explorer */
+  -o-transform: translateX(-50%) translateY(-50%); /* Old versions of Opera */
+  transform: translateX(-50%) translateY(-50%); /* 沒限制，有支援的瀏覽器就會run */
+  text-align: center; /*裡面的文字置中*/
+}
+
+.shadow {
+  text-shadow: 0px 0px 5px rgba(0,0,0, .8);
+  color:#EEEE00;
+  font-weight:bold;
+}
+
+.boxShadow_1{
+  box-shadow:3px 3px 12px #cccccc;
+}
+
+.color_logo{
+  color:#FF0000;
+  font-weight:bold;
+}
+
+.carousel_1{
+  height: 300px;
+}
+
+.address {
+  padding: 50px;
+}
