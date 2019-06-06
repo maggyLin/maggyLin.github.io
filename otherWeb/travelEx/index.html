@@ -1,12 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/bootstrapNavBar_Blue.css">
+
 </head>
 <body>
-    1234
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav nav-pills">
+                <li class="active"><a href="#taoyuan">桃園</a></li>
+                <li><a href="#miaoli">苗栗</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div id="taoyuan" class="jumbotron" style="padding: 50px 0px 0px 0px; margin: 0px;">
+        <div class="row" style="margin:0px 20px 0px 20px;">
+            <div class="col-xs-12">
+                <div class="alert" style="background-color:lightblue; padding: 8px;">
+                    <p class="text-center">桃園</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="thumbnail" style="box-shadow:3px 3px 12px #cccccc;">
+                        <img style="height:200px;" src="img/honey.JPG">
+                        <div class="caption">
+                            <p>aaaa vvv ddd sss eee</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="miaoli" class="jumbotron" style="padding: 50px 0px 0px 0px; margin: 0px;">
+            <div class="row" style="margin:0px 20px 0px 20px;">
+                <div class="col-xs-12">
+                    <div class="alert" style="background-color:lightblue; padding: 8px;">
+                        <p class="text-center">苗栗</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="thumbnail" style="box-shadow:3px 3px 12px #cccccc;">
+                            <img style="height:200px;" src="img/honey.JPG">
+                            <div class="caption">
+                                <p>aaaa vvv ddd sss eee</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+
+
+
+    <script src='js/jquery-1.12.4.min.js'></script>
+    <script>
+        $("ul li a").on("click", function(){
+        	var a_elm = $(this);
+        	var target_id = a_elm.attr("href");
+        	var topTo = 0;
+        	if(target_id != "#"){
+        		topTo = $(target_id).position().top;
+        	}
+        	$("html, body").animate({
+        		scrollTop: topTo
+        	}, 1000, function(){ 
+            $("ul li[class='active']").removeClass('active');
+        		a_elm.parent().addClass('active');
+        	});
+        	return false;
+        });
+    </script>
 </body>
 </html>
